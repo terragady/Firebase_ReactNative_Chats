@@ -20,7 +20,7 @@ const login = ({ navigation }) => {
     return unsubscribe;
   }, [])
   const signIn = () => {
-
+    auth.signInWithEmailAndPassword(email, password).catch((error) => alert(error))
   }
   return (
     <KeyboardAvoidingView behavior='padding' style={styles.container} >
@@ -29,7 +29,7 @@ const login = ({ navigation }) => {
         style={{ width: 200, height: 200 }} />
       <View style={styles.inputContainer}>
         <Input placeholder="Email" autofocus type="email" value={email} onChangeText={text => setEmail(text)} />
-        <Input placeholder="Password" secureTextEntry type="password" value={password} onChangeText={text => setPassword(text)} />
+        <Input onSubmitEditing={signIn} placeholder="Password" secureTextEntry type="password" value={password} onChangeText={text => setPassword(text)} />
       </View>
       <Button containerStyle={styles.button} onPress={signIn} title="Login" />
       <Button onPress={() => navigation.navigate('Register')} containerStyle={styles.button} type="outline" title="Register" />

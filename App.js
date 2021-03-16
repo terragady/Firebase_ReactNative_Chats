@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import 'react-native-gesture-handler';
 import LoginScreen from "./screens/login"
 import HomeScreen from "./screens/home"
+import AddChatScreen from "./screens/addChat"
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from "@react-navigation/stack"
@@ -26,6 +27,7 @@ export default function App() {
         <Stack.Screen name='Login' component={LoginScreen} />
         <Stack.Screen name='Register' component={RegisterScreen} />
         <Stack.Screen name='Home' component={HomeScreen} />
+        <Stack.Screen name='AddChat' component={AddChatScreen} />
       </Stack.Navigator>
     </NavigationContainer>
 
