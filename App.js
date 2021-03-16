@@ -12,14 +12,17 @@ import RegisterScreen from './screens/register';
 const Stack = createStackNavigator();
 
 const globalScreenOptions = {
-  headerStyle: { backgroundColor: "#2c6BED"},
-  headerTitleStyle: {color: "white", alignSelf:"center"},
+  headerStyle: { backgroundColor: "#2c6BED" },
+  headerTitleStyle: { color: "white", alignSelf: "center" },
   headerTintColor: "white",
 }
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={globalScreenOptions}>
+      <Stack.Navigator
+        // initialRouteName="Home"
+        screenOptions={globalScreenOptions}>
+
         <Stack.Screen name='Login' component={LoginScreen} />
         <Stack.Screen name='Register' component={RegisterScreen} />
         <Stack.Screen name='Home' component={HomeScreen} />

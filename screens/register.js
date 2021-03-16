@@ -20,6 +20,7 @@ navigation.setOptions({
     .then(authUser => {
       authUser.user.updateProfile({
         displayName: name,
+        photoURL: `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`
         
       })
     }).catch(error => alert(error.message))
